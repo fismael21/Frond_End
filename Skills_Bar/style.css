@@ -1,0 +1,240 @@
+/* 
+ Colors:
+
+ For dark mode
+ #0d1117
+ #21262d
+ */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/** SECTION SKILLS */
+.skills-container {
+  margin: 4rem 8rem;
+  width: 60rem;
+  height: auto;
+  background: #f2f2f2;
+  padding: 2.5rem 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.skills-bar .bar {
+  margin: 2rem 0;
+}
+
+.skills-bar .bar:first-child {
+  margin-top: 0;
+}
+
+.skills-bar .info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+/*
+.icon {
+  font-size: 2.6rem;
+  
+  opacity: 0;
+  animation: showIcons 0.5s 1s linear forwards;
+}
+
+@keyframes showIcons {
+  100% {
+    opacity: 1;
+  }
+}
+
+.icon-html {
+  color: #fd982c;
+}
+
+.icon-css {
+  color: #2965f1;
+}
+
+.icon-javascript {
+  color: #f0be25;
+}
+
+.icon-nodejs {
+  color: #83cd29;
+}
+
+.icon-react {
+  color: #61dafb;
+}
+*/
+
+.skills-bar .bar .info span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  /*text-transform: uppercase;*/
+  /** For animation */
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+
+.skills-bar .bar .info .span-html {
+  background-image: linear-gradient(to right, #e9b91c, #be471b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.skills-bar .bar .info .span-css {
+  background-image: linear-gradient(to right, #5484f4, #2965f1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.skills-bar .bar .info .span-javascript {
+  background-image: linear-gradient(to right, #f0be25, #e4a126);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.skills-bar .bar .info .span-nodejs {
+  background-image: linear-gradient(to right, #83cd29, #69a421);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.skills-bar .bar .info .span-react {
+  background-image: linear-gradient(to right, #61dafb, #4eaec9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
+}
+
+.skills-bar .bar .progress-line {
+  position: relative;
+  height: 1.2rem;
+  width: 100%;
+  border-radius: 1.5rem;
+  background: #fff;
+
+  /*
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05),
+    0px 1px rgba(255, 255, 255, 0.8);*/
+
+  /** For animation */
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.bar .progress-line span {
+  height: 100%;
+  position: absolute;
+  border-radius: 1.5rem;
+
+  /** For animation */
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/** Progress lines - Color and width */
+
+.progress-line.html span {
+  background: linear-gradient(to right, #fd982c, #fa502e);
+  width: 80%;
+}
+
+.progress-line.css span {
+  background: linear-gradient(to right, #5484f4, #2965f1);
+  width: 50%;
+}
+
+.progress-line.javascript span {
+  background: linear-gradient(to right, #f0be25, #e4a126);
+  width: 68%;
+}
+
+.progress-line.nodejs span {
+  background: linear-gradient(to right, #83cd29, #69a421);
+  width: 60%;
+}
+
+.progress-line.react span {
+  background: linear-gradient(to right, #61dafb, #4eaec9);
+  width: 42%;
+}
+
+.bar .progress-line span::after {
+  /** POSITION */
+  position: absolute;
+  right: 0.5rem;
+  top: -1.7rem;
+
+  /**  ATTRIBUTES */
+  color: #111;
+  font-size: 1.2rem;
+  /*
+  font-weight: 500;
+  text-transform: uppercase;*/
+  opacity: 0;
+
+  /** ANIMATION */
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+
+@keyframes showText2 {
+  100% {
+    opacity: 1;
+  }
+}
+
+.progress-line.html span::after {
+  content: "80%";
+}
+.progress-line.css span::after {
+  content: "50%";
+}
+.progress-line.javascript span::after {
+  content: "68%";
+}
+.progress-line.nodejs span::after {
+  content: "60%";
+}
+.progress-line.react span::after {
+  content: "42%";
+}
